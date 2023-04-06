@@ -32,6 +32,10 @@ public class Main {
             LocalDate start = LocalDate.parse(dob, formatter);
             LocalDate end = LocalDate.now();
             years = (int) ChronoUnit.YEARS.between(start, end);
+            if (years < 0) {
+                System.out.println("Человек ещё не родился!");
+                return;
+            }
         } catch (Exception e) {
             System.out.println("Ошибка в дате рождения! Проверьте правильность и формат ввода: ДД.ММ.ГГГГ");
             return;
